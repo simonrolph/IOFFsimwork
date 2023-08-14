@@ -1,7 +1,39 @@
+### Installation notes
+
+Packages are managed with renv https://rstudio.github.io/renv/
+
+```
+install.packages("renv")
+renv::restore()
+```
+
+This might fail to install some pacakges because...
+
+RandomFields is retired. Install from archive:
+
+```
+install.packages(pkgs = "https://cran.r-project.org/src/contrib/Archive/RandomFieldsUtils/RandomFieldsUtils_1.2.5.tar.gz", type="source", repos=NULL)
+install.packages(pkgs = "https://cran.r-project.org/src/contrib/Archive/RandomFields/RandomFields_3.3.14.tar.gz", type="source", repos=NULL)
+```
+
+Need to install older version of Matrix (rBind function was made defunct in 1.3-3: https://stat.ethz.ch/R-manual/R-devel/library/Matrix/html/Matrix-defunct.html)
+
+```
+install.packages(pkgs = "https://cran.r-project.org/src/contrib/Archive/Matrix/Matrix_1.3-0.tar.gz", type="source", repos=NULL)
+
+```
+
+INLA is not on CRAN:
+https://www.r-inla.org/download-install
+
+```
+install.packages("INLA",repos=c(getOption("repos"),INLA="https://inla.r-inla-download.org/R/stable"), dep=TRUE)
+```
+
+
+
 ---
-title: "README"
-output: html_document
----
+
 
 ## Code to run simulations for Simmonds *et al* 2020 ['Is more data always better? A simulation study of benefits and limitations of integrated distribution models'](https://doi.org/10.1111/ecog.05146)
 
